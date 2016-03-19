@@ -1,0 +1,79 @@
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form class="register-form" novalidate name="registerForm">
+            <h3>Sign Up</h3>
+
+            <div class="alert alert-danger alert-dismissable" data-ng-if="rg.error">
+                <button type="button" class="close" data-dismiss="alert"
+                        aria-hidden="true"></button>
+                <strong>Error :</strong> {{rg.message}}
+            </div>
+            <p>Enter your personal details below:</p>
+
+            <div class="form-group ">
+                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                <label class="control-label visible-ie8 visible-ie9">Email</label>
+
+                <div class="input-icon">
+                    <i class="fa fa-envelope"></i> <input
+                        class="form-control placeholder-no-fix" type="email" data-ng-model="rg.user.email"
+                        placeholder="Email" name="email" required="required">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label visible-ie8 visible-ie9">Username</label>
+
+                <div class="input-icon">
+                    <i class="fa fa-user"></i> <input
+                        class="form-control placeholder-no-fix" type="text" data-ng-model="rg.user.username"
+                        placeholder="Username" name="username" autocomplete="off" ng-minlength="6"
+                        required="required"/>
+                </div>
+            </div>
+            <div class="form-group ">
+                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                <label class="control-label visible-ie8 visible-ie9">Password</label>
+
+                <div class="input-icon">
+                    <i class="fa fa-lock"></i> <input
+                        class="form-control placeholder-no-fix" type="password" data-ng-model="rg.user.password"
+                        placeholder="Password" name="password" required="required" ng-minlength="6"
+                        autocomplete="off">
+
+                </div>
+            </div>
+            <div class="form-group ">
+                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                <label class="control-label visible-ie8 visible-ie9">Password</label>
+
+                <div class="input-icon">
+                    <i class="fa fa-check"></i> <input
+                        class="form-control placeholder-no-fix" type="password" data-ng-model="rg.user.rpassword"
+                        placeholder="Retype Password" name="rpassword" required="required" ng-minlength="6">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label> By click sign up you agree to the <a href=/#/term">
+                    Terms of Service </a> and <a href="/#/policy"> Privacy Policy </a>
+                </label>
+
+                <div id="register_tnc_error"></div>
+            </div>
+            <div class="form-actions">
+                <a id="register-back-btn" type="button" class="btn btn-default" style="margin-right: 110px"
+                   href="#/login">
+                    <i class="m-icon-swapleft"></i> Sign In
+                </a>
+                <button type="submit" id="register-submit-btn" data-ng-click="rg.save()"
+                        class="btn green-haze pull-right">
+                    Sign Up <i class="m-icon-swapright m-icon-white"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+
